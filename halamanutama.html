@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Kalkulator Bangun Datar</title>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/logo.png">
+    <style media="screen">
+    body{
+      margin: 0px;
+      padding: 0px;
+      font-family: "Roboto", sans-serif;
+    }
+
+    *{
+      box-sizing: border-box;
+    }
+
+    ul{
+    list-style: none;
+    }
+
+    a{
+      text-decoration: none;
+    }
+    .main{
+      width: 100%;
+      height: 100vh;
+      background-image: url(https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/bg.jpg);
+      background-size: cover;
+      background-position: top left;
+    }
+
+    .logo img{
+      height:80px;
+    }
+
+    nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px 30px;
+      background-image: linear-gradient(120deg,#c8d6e5,#dff9fb);
+      z-index: 1;
+      width: 100%;
+      position: fixed;
+    }
+
+    nav ul{
+      display: flex;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    nav ul li a{
+      height: 60px;
+      line-height: 50px;
+      margin: 10px;
+      padding: 4px 22px;
+      display: flex;
+      font-size: 1.0rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: #111;
+      letter-spacing: 1px;
+    }
+
+    nav ul li a:hover{
+      background-color: #00CED1;
+      color: #fff;
+      box-shadow: 5px 10px 30px rgba(90, 118, 253, 0.5);
+      border: 0;
+      border-radius: 10px;
+      transition: all ease 0.3s;
+    }
+
+    .homecontent{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 90%;
+    }
+    .homeimage{
+      width: 500px;
+      height: 400px;
+      margin: 20px;
+    }
+
+    .homeimage img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .hometext{
+      width: 900px;
+      margin: 20px;
+    }
+    .hometext h1{
+      font-size: 2.5rem;
+      color: #22252e;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin: 0px;
+    }
+
+    .services{
+      background-image: url(https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/bg2.jpg);
+      background-size: 1000px;
+      background-position: center;
+    }
+
+    .services2{
+      background-image: url(https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/bg5.jpg);
+      background-size: 1000px;
+      background-position: center;
+    }
+
+    .heading{
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .heading h2{
+      line-height: 55px;
+      font-size: 2.2rem;
+      color: black;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin: 0px;
+    }
+
+    .box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 20px 30px;
+    }
+
+    .materi{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 400px;
+      text-align: center;
+      box-shadow: 2px 2px 20px rgba(90, 118, 253, 0.15);
+      background-color: #fff;
+      margin: 20px;
+      border-radius: 20px;
+      flex-grow: 1;
+    }
+
+    .materi img{
+      height: 150px;
+      margin: 10px;
+    }
+
+    .materi font{
+      font-size: 1.5rem;
+      color: #22252e;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .materi p{
+      font-size: 1rem;
+      color: #777474;
+      display: block;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 500px;
+    }
+
+    .materi a{
+      width: 150px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #87CEFA;
+      text-transform: uppercase;
+      margin: auto;
+      border-radius: 5px;
+      font-weight: 450;
+      font-size: 0.9rem;
+      color: #2F4F4F;
+
+    }
+
+    .materi a:hover{
+      background-color: #6495ED;
+      color: #fff;
+      box-shadow: 5px 10px 30px rgba(90, 118, 253, 0.5);
+      border: 0;
+      border-radius: 10px;
+      transition: all ease 0.3s;
+    }
+
+    nav .image{
+      display: none;
+    }
+    @media(max-width:1100px){
+      nav{
+          justify-content: space-between;
+          height: 65px;
+      }
+      .menu{
+          display: none;
+          position: absolute;
+          top: 65px;
+          left: 0px;
+          background-color: #fff;
+          border-bottom: 4px solid #5a76fd;
+          width:100%;
+      }
+      .menu li{
+          width:100%;
+      }
+      nav .menu li a{
+          width:100%;
+          height: 40px;
+          justify-content: center;
+          align-items: center;
+          margin:0px;
+          padding: 25px;
+          border:1px solid rgba(38,38,38,0.03);
+      }
+
+      nav .image{
+        display: block;
+      }
+
+      .image{
+          cursor: pointer;
+          float: right;
+          padding: 28px 20px;
+          position: relative;
+          user-select: none;
+      }
+      .image img{
+          display: block;
+          height: 64px;
+          position: relative;
+          transition: background 0.2s ease-out;
+          width:60px;
+      }
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="main">
+      <nav>
+        <a href="index.html" class="image">
+          <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/home.png" alt="">
+        </a>
+
+        <ul class="menu">
+          <li><a href="index.html">Home</a>
+          </li>
+        </ul>
+      </nav>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+    <section class="services">
+        <div class="box">
+          <div class="materi">
+            <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/persegi.png" alt="">
+            <font>Kalkulator Persegi</font>
+            <a href="https://kalkulatorpersegi.herokuapp.com/">Klik Disini</a>
+          </div>
+
+          <div class="materi">
+            <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/persegipanjang.png" alt="">
+            <font>Kalkulator Persegi Panjang</font>
+            <a href="https://kalkulatorpersegipanjang.herokuapp.com/">Klik Disini</a>
+          </div>
+
+          <div class="materi">
+            <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/segitiga.png" alt="">
+            <font>Kalkulator Segitiga</font>
+            <a href="https://kalkulatorsegitiga.herokuapp.com/">Klik Disini</a>
+          </div>
+
+          <div class="materi">
+            <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/jajargenjang.png" alt="">
+            <font>Kalkulator Jajar Genjang</font>
+            <a href="https://kalkulatorjajargenjang.herokuapp.com/">Klik Disini</a>
+          </div>
+        </div>
+    </section>
+
+    <section class="services2">
+        <div class="box">
+          <div class="materi">
+            <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/trapesium.png" alt="">
+            <font>Kalkulator Trapesium</font>
+            <a href="https://kalkulatortrapesium.herokuapp.com">Klik Disini</a>
+          </div>
+
+          <div class="materi">
+            <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/layanglayang.png" alt="">
+            <font>Kalkulator Layang-Layang</font>
+            <a href="https://kalkulatorlayanglayang.herokuapp.com">Klik Disini</a>
+          </div>
+
+          <div class="materi">
+            <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/belahketupat.png" alt="">
+            <font>Kalkulator Belah Ketupat</font>
+            <a href="https://kalkulatorbelahketupat.herokuapp.com">Klik Disini</a>
+          </div>
+
+          <div class="materi">
+            <img src="https://raw.githubusercontent.com/CSPGhostDelta/halamanutama/main/template/lingkaran.png" alt="">
+            <font>Kalkulator Lingkaran</font>
+            <a href="https://kalkulatorlingkaran.herokuapp.com/">Klik Disini</a>
+          </div>
+        </div>
+    </section>
+  </body>
+</html>
